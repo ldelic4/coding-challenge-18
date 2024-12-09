@@ -1,7 +1,7 @@
 //task 2
 
 import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import Chart from 'File: src/components/ChartComponent.jsx';
 //define function component andensures proper cleanup
 const ChartComponent = ({ type, data, options }) => {
     const chartRef = useRef(null);
