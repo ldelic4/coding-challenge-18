@@ -50,3 +50,14 @@ if (!chartData) {
 }
 
 
+//task 5
+//render each chart component and title of app
+return (
+  <div style={{ textAlign: 'center' }}>
+    <h1>dynamic chart dashboard</h1>
+    <BarChart data={chartData} />
+    <LineChart data={chartData} />
+    <ScatterChart data={chartData} />
+    <BubbleChart data={chartData} />
+  </div>
+);
