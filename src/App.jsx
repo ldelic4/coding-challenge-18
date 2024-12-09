@@ -33,3 +33,28 @@ function App() {
 }
 
 export default App
+
+
+//task 4
+//stores fetched data
+const [chartData, setChartData] = useState(null);
+//loads data from json file and updates fetched data
+useEffect(() => {
+  fetch('/financial_data.json')
+    .then((response) => response.json())
+    .then((data) => setChartData(data));
+}, []);
+//displays loading messages with data is being fetched
+if (!chartData) {
+  return <div>Loading...</div>;
+}
+//render each chart component and title of app
+return (
+  <div style={{ textAlign: 'center' }}>
+    <h1>dynamic chart dashboard</h1>
+    <BarChart data={chartData} />
+    <LineChart data={chartData} />
+    <ScatterChart data={chartData} />
+    <BubbleChart data={chartData} />
+  </div>
+);
